@@ -1,0 +1,3 @@
+[submodule "MobVis"]
+	path = MobVis
+	url = https://github.com/lucNovais/MobVis.git
