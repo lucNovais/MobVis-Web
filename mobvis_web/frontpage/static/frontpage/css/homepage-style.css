@@ -1,0 +1,331 @@
+.std-box {
+    position: relative;
+
+    width: 860px;
+    height: 280px;
+
+    left: 532px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+}
+
+.std-box img {
+    position: inherit;
+
+    width: 36px;
+    height: 36px;
+
+    top: 16px;
+    left: 16px;
+
+    z-index: 2;
+}
+
+.std-box p {
+    position: inherit;
+
+    top: -43px;
+    left: 60px;
+
+    width: 280px;
+    height: 26px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #000;
+}
+
+.std-box ol {
+    position: inherit;
+
+    width: 670px;
+    height: 196px;
+
+    left: 90px;
+    top: -62px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    align-items: center;
+
+    color: #000;
+}
+
+.std-box ul{
+    position: inherit;
+
+    list-style-type: none;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    display: inline-block;
+    align-items: center;
+
+    color: #000;
+}
+
+.std-box #parameters {
+    top: -58px;
+    left: 180px;
+
+    line-height: 22px;
+}
+
+.std-box #select-plots {
+    top: -60px;
+    left: 230px;
+
+    line-height: 52px;
+}
+
+.std-box button {
+    position: inherit;
+
+    width: 220px;
+    height: 76px;
+
+    left: 118px;
+    top: 14px;
+
+    background: #CCD1DC;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.std-box input[type=text] {
+    position: inherit;
+    display: inline-block;
+
+    top: -26px;
+    left: 225px;
+
+    width: 196px;
+    height: 28px;
+
+    background: #FFF;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.std-box input[type=text]::placeholder {
+    position: inherit;
+
+    width: 194px;
+    height: 26px;
+    
+    right: 8px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+    color: #DBDBDB;
+}
+
+.std-box input[type=checkbox] {
+    position: relative;
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    top: 5px;
+    right: 2px;
+}
+
+.std-box input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+.help {
+    position: inherit;
+
+    margin-right: 8px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+
+    color: #4D5058;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.help-text {
+    visibility: hidden;
+
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    border-radius: 8px;
+
+    font-weight: 400;
+    font-size: 18px;
+
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.help:hover {
+    cursor: pointer;
+    transition: 280ms;
+}
+
+.help:hover .help-text {
+    visibility: visible;
+}
+
+.metric-types {
+    position: inherit;
+
+    display: inline-block;
+
+    width: 195px;
+    height: 260px;
+
+    margin: 5px;
+
+    top: -40px;
+    left: 14px;
+
+    background-color: #FFF;
+    border-radius: 10px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 44px;
+    align-items: center;
+    text-align: center;
+
+    color: #000;
+}
+
+.metric {
+    position: inherit;
+
+    font-size: 18px;
+
+    left: 20px;
+
+    text-align: left;
+}
+
+#general-instructions {
+    top: 100px;
+}
+
+#upload-raw {
+    top: 146px;
+}
+
+#drag-drop {
+    position: inherit;
+
+    width: 200px;
+    height: 84px;
+
+    left: 330px;
+    top: -45px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+
+    color: #000;
+}
+
+#configuration {
+    position: relative;
+
+    height: 340px;
+
+    top: 217px;
+}
+
+#metrics {
+    position: relative;
+
+    height: 380px;
+
+    top: 266px;
+}
+
+#plots {
+    position: relative;
+
+    top: 315px;
+}
+
+button {
+    position: relative;
+
+    width: 160px;
+    height: 56px;
+
+    left: 885px;
+    top: 180px;
+
+    background: #CCD1DC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 260ms;
+    cursor: pointer;
+}

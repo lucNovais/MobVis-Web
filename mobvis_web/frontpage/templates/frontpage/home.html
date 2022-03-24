@@ -1,0 +1,131 @@
+{% extends 'frontpage/index.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'frontpage/css/homepage-style.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<div class="std-box" id="general-instructions">
+    <img src="{% static 'frontpage/imgs/icons/paper.svg' %}" alt="General Instructions" />
+    <p>General instructions:</p>
+
+    <ol>
+        <li>Upload the trace in CSV format via the "Upload" button;</li>
+        <li>Select metrics and configure parameters for processing (if not specified, parameters are set   to a default value);</li>
+        <li>Select the plots to be generated;</li>
+        <li>Press the "Submit" button to start the procedures.</li>
+    </ol>
+</div>
+
+<div class="std-box" id="upload-raw">
+    <img src="{% static 'frontpage/imgs/icons/file.svg' %}" alt="Upload Raw Trace" />
+    <p>Upload raw trace:</p>
+    <div id="drag-drop">Drag and drop here or</div>
+    <button>Select from computer</button>
+</div>
+
+<button>UPLOAD</button>
+
+<div class="std-box" id="configuration">
+    <img src="{% static 'frontpage/imgs/icons/config.svg' %}" alt="Configuration Parameters" />
+    <p>Configuration parameters:</p>
+    <ul id="parameters">
+        <li>
+            <span class="help">?
+                <div class="help-text">
+                    Maximum distance to a region be considered a Stay-location.
+                </div>
+            </span>
+            Max distance: 
+        </li><input type="text" placeholder="default = 30 m">
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Ammout of waiting time to the Stay-location be considered a Geo-location (in minutes).
+                </span>
+            </span>
+            Pause threshold: 
+        </li><input type="text" placeholder="default = 10 min">
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Contact radius of the nodes.
+                </span>
+            </span>
+            Contact radius: 
+        </li><input type="text" placeholder="default = 20 m">
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Distance formula. Supported types are: Haversine and Euclidean.
+                </span>
+            </span>
+            Distance formula: 
+        </li><input type="text" placeholder="default = euclidean">
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    This configuration parameter will still be added.
+                </span>
+            </span>
+            To be added: 
+        </li><input type="text" placeholder="default = NaN">
+    </ul>
+</div>
+
+<div class="std-box" id="metrics">
+    <img src="{% static 'frontpage/imgs/icons/calc.png' %}" alt="Choose Metrics">
+    <p>Choose metrics: </p>
+
+    <div class="metric-types">Spatial: 
+        <div class="metric"><input type="checkbox" />Travel Distance</div>
+        <div class="metric"><input type="checkbox" />Radius of Gyration</div>
+        <!-- <div class="metric"><input type="checkbox" />Total Distance</div> -->
+    </div>
+    <div class="metric-types">Temporal: 
+        <div class="metric"><input type="checkbox" />Travel Time</div>
+        <div class="metric"><input type="checkbox" />Visit Time</div>
+    </div>
+    <div class="metric-types">Social:
+        <div class="metric"><input type="checkbox" />Intercontact Time</div>
+        <div class="metric"><input type="checkbox" />Contact Duration</div>
+    </div>
+    <div class="metric-types">Spatiotemporal: 
+        <div class="metric"><input type="checkbox" />Visit Order</div>
+        <div class="metric"><input type="checkbox" />Average Speed</div>
+    </div>
+</div>
+
+<div class="std-box" id="plots">
+    <img src="{% static 'frontpage/imgs/icons/chart.png' %}" alt="Select Plots" />
+    <p>Select plots: </p>
+    <ul id="select-plots">
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Plots statistical graphs and histograms about the extracted metrics.
+                </span>
+            </span><input type="checkbox" checked>
+            Statistical plots (metrics)
+        </li>
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Plots spatial graphs about the trace.
+                </span>
+            </span><input type="checkbox" checked>
+            Spatial plots (metrics)
+        </li>
+        <li>
+            <span class="help">?
+                <span class="help-text">
+                    Select plots manually.
+                </span>
+            </span><input type="checkbox">
+            Specify plots
+        </li>
+    </ul>
+</div>
+
+{% endblock content %}

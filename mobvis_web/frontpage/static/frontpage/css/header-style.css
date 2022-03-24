@@ -1,0 +1,143 @@
+body {
+    width: 1860px;
+    height: 1840px;
+
+    position: relative;
+
+    background: #FFF;
+}
+
+.top-logo {
+    position: relative;
+
+    width: 403.16px;
+    height: 80px;
+
+    left: 39.16%;
+    top: 32px;
+}
+
+.top-phrase {
+    position: relative;
+
+    width: 480px;
+    height: 50px;
+
+    left: 38.35%;
+    top: 24px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000;
+}
+
+.top-bar {
+    position: absolute;
+
+    top: -8px;
+    left: -8px;
+
+    width: 102.3%;
+    height: 180px;
+
+    padding: 0;
+    margin: 0;
+
+    align-items: center;
+
+    background: #DDE2ED;
+}
+
+.top-circles {
+    position: absolute;
+
+    top: -65px;
+
+    height: 300px;
+
+    background: #FFF;
+}
+
+#circle1 {
+    border-radius: 50%;
+
+    left: 670px;
+
+    width: 300px;
+}
+
+#circle2 {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+
+    left: 1745px;
+
+    width: 150px;
+}
+
+.ufop-logo {
+    position: absolute;
+
+    width: 52px;
+    height: 110px;
+
+    left: 1800px;
+    top: 26px;
+}
+
+.navbar-bar {
+    position: absolute;
+
+    top: 172px;
+    left: -8px;
+
+    width: 102.3%;
+    height: 50px;
+
+    padding: 0;
+    margin: 0;
+
+    align-items: center;
+
+    background: #CCD1DC;
+}
+
+.navbar {
+    position: relative;
+
+    display: inline;
+
+    left: 40%;
+    top: 46px;
+
+    height: 38px;
+    width: 124px;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    align-items: center;
+    text-align: center;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #FFF;
+
+    margin: 10px;
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 260ms;
+}
