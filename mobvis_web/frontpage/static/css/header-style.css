@@ -2,6 +2,8 @@ body {
     width: 1860px;
     height: 1840px;
 
+    padding-bottom: 420px;
+
     position: relative;
 
     background: #FFF;
@@ -81,14 +83,99 @@ body {
     width: 150px;
 }
 
-.ufop-logo {
+.bottom-logo {
     position: absolute;
 
-    width: 52px;
-    height: 110px;
+    display: flex;
 
-    left: 1800px;
-    top: 26px;
+    margin-top: 22px;
+    /* margin-left: 20px; */
+    left: 44.5%;
+
+    width: 240px;
+    height: 47.64px;
+}
+
+.github-logo {
+    position: absolute;
+
+    display: flex;
+
+    margin-top: 84px;
+    /* margin-left: 130px; */
+    left: 50.4%;
+}
+
+.thanks-phrase {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    padding-left: 760px;
+    padding-top: 120px;
+
+    color: #000;
+}
+
+footer {
+    position: absolute;
+
+    border-top: 6px solid rgba(204, 209, 220, 0.5);
+
+    left: -8px;
+    bottom: -172px;
+
+    width: 102.3%;
+    height: 280px;
+
+    background-color: rgba(221, 226, 237, 0.5);
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.logo {
+    position: inherit;
+    display: inline-block;
+
+    margin-right: 16px;
+    margin-top: 10px;
+    margin-left: 16px;
+
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#ufop {
+    width: 40px;
+    height: 92.65px;
+
+    padding-left: 80px;
+}
+
+#ufes {
+    width: 80px;
+    height: 43.76px;
+
+    top: 100px;
+}
+
+#fkie {
+    width: 120px;
+    height: 42.75px;
+}
+
+#fapemig {
+    width: 80px;
+    height: 67.04px;
 }
 
 .navbar-bar {
@@ -113,7 +200,7 @@ body {
 
     display: inline;
 
-    left: 40%;
+    left: 37.5%;
     top: 46px;
 
     height: 38px;

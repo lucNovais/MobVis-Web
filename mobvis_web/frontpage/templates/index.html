@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobVis: Easily visualize mobility data</title>
+    <link rel="stylesheet" href="{% static 'css/header-style.css' %}">
+    <link rel="icon" href="{% static 'imgs/small_logo.svg' %}">
+    {% block extrahead %}
+        Specific head configurations here!
+    {% endblock extrahead %}
+</head>
+<body>
+    <header>
+        <div class="top-bar"></div>
+        <div class="top-circles" id="circle1"></div>
+        <div class="top-circles" id="circle2"></div>
+
+       <img src="{% static 'imgs/full_logo.svg' %}"
+            alt="MobVis Logo"
+            class="top-logo"
+            title="MobVis: A framework to easily visualize mobility data" />
+
+        <span class="top-phrase">A framework to easily visualize mobility data</span>
+        <div class="navbar-bar"></div>
+
+        <nav class="navbar">
+            <a href="home.html">HOME</a>
+            <a href="demo.html">DEMO</a>
+            <a href="project.html">PROJECT</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+    {% block content %}
+        Current page content here!
+    {% endblock content %}
+    <footer>
+        <img src="{% static 'imgs/full_logo.svg' %}"
+                alt="MobVis Logo"
+                class="bottom-logo"
+                title="MobVis: A framework to easily visualize mobility data" />
+
+        <a href="https://github.com/lucNovais/MobVis" target="_blank">
+            <img src="{% static 'imgs/icons/github.svg' %}"
+                 alt="GitHub Page"
+                 class="github-logo"
+                 title="Visit our GitHub page!" />
+        </a>
+
+        <div class="thanks-phrase">
+            This project was developed thanks to the support of:
+        </div>
+
+        <a href="https://ufop.br/" target="_blank">
+            <img src="{% static 'imgs/logo_ufop.png' %}"
+                 alt="UFOP Logo"
+                 class="logo"
+                 id="ufop"
+                 title="Universidade Federal de Ouro Preto" />
+        </a>
+        <a href="https://www.fkie.fraunhofer.de/" target="_blank">
+            <img src="{% static 'imgs/logo_fkie.png' %}"
+                 alt="FKIE Logo"
+                 class="logo"
+                 id="fkie"
+                 title="Fraunhofer-Institut für Kommunikation, Informationsverarbeitung und Ergonomie FKIE" />
+        </a>
+        <a href="https://www.ufes.br/" target="_blank">
+            <img src="{% static 'imgs/logo_ufes.png' %}"
+                 alt="UFES Logo"
+                 class="logo"
+                 id="ufes"
+                 title="Universidade Federal do Espírito Santo" />
+        </a>
+        <a href="http://www.fapemig.br/pt/" target="_blank">
+            <img src="{% static 'imgs/logo_fapemig.png' %}"
+                 alt="FAPEMIG Logo"
+                 class="logo"
+                 id="fapemig"
+                 title="FAPEMIG" />
+        </a>
+    </footer>
+</body>
+</html>

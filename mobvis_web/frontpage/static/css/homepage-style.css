@@ -91,14 +91,14 @@
     line-height: 52px;
 }
 
-.std-box button {
+.std-box label {
     position: inherit;
 
-    width: 220px;
+    width: 200px;
     height: 76px;
 
-    left: 118px;
-    top: 14px;
+    left: 128px;
+    top: 34px;
 
     background: #CCD1DC;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
@@ -109,10 +109,11 @@
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 29px;
+    line-height: 35px;
     display: inline-block;
     align-items: center;
     text-align: center;
+    vertical-align: middle;
 
     color: #000000;
 }
@@ -255,6 +256,10 @@
     top: 146px;
 }
 
+#file-input {
+    opacity: 0;
+}
+
 #drag-drop {
     position: inherit;
 
@@ -324,7 +329,7 @@ button {
     color: #000000;
 }
 
-button:hover {
+button:hover, label:hover{
     background-color: rgba(0, 0, 0, 0.2);
     transition: 260ms;
     cursor: pointer;

@@ -1,13 +1,13 @@
-{% extends 'frontpage/index.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
 {% block extrahead %}
-<link rel="stylesheet" href="{% static 'frontpage/css/homepage-style.css' %}">
+<link rel="stylesheet" href="{% static 'css/homepage-style.css' %}">
 {% endblock extrahead %}
 
 {% block content %}
 <div class="std-box" id="general-instructions">
-    <img src="{% static 'frontpage/imgs/icons/paper.svg' %}" alt="General Instructions" />
+    <img src="{% static 'imgs/icons/paper.svg' %}" alt="General Instructions" />
     <p>General instructions:</p>
 
     <ol>
@@ -17,18 +17,21 @@
         <li>Press the "Submit" button to start the procedures.</li>
     </ol>
 </div>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="std-box" id="upload-raw">
+        <img src="{% static 'imgs/icons/file.svg' %}" alt="Upload Raw Trace" />
+        <p>Upload raw trace:</p>
+        <div id="drag-drop">Drag and drop here or</div>
+        <label for="file-input">Select from computer</label>
+        <input type="file" id="file-input" />
+    </div>
 
-<div class="std-box" id="upload-raw">
-    <img src="{% static 'frontpage/imgs/icons/file.svg' %}" alt="Upload Raw Trace" />
-    <p>Upload raw trace:</p>
-    <div id="drag-drop">Drag and drop here or</div>
-    <button>Select from computer</button>
-</div>
-
-<button>UPLOAD</button>
+    <button type="submit">UPLOAD</button>
+</form>
 
 <div class="std-box" id="configuration">
-    <img src="{% static 'frontpage/imgs/icons/config.svg' %}" alt="Configuration Parameters" />
+    <img src="{% static 'imgs/icons/config.svg' %}" alt="Configuration Parameters" />
     <p>Configuration parameters:</p>
     <ul id="parameters">
         <li>
@@ -75,7 +78,7 @@
 </div>
 
 <div class="std-box" id="metrics">
-    <img src="{% static 'frontpage/imgs/icons/calc.png' %}" alt="Choose Metrics">
+    <img src="{% static 'imgs/icons/calc.png' %}" alt="Choose Metrics">
     <p>Choose metrics: </p>
 
     <div class="metric-types">Spatial: 
@@ -98,7 +101,7 @@
 </div>
 
 <div class="std-box" id="plots">
-    <img src="{% static 'frontpage/imgs/icons/chart.png' %}" alt="Select Plots" />
+    <img src="{% static 'imgs/icons/chart.png' %}" alt="Select Plots" />
     <p>Select plots: </p>
     <ul id="select-plots">
         <li>
