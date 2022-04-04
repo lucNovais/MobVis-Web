@@ -286,7 +286,7 @@
 
     height: 340px;
 
-    top: 217px;
+    top: 195px;
 }
 
 #metrics {
@@ -294,13 +294,13 @@
 
     height: 380px;
 
-    top: 266px;
+    top: 248px;
 }
 
 #plots {
     position: relative;
 
-    top: 315px;
+    top: 300px;
 }
 
 button {
@@ -329,8 +329,71 @@ button {
     color: #000000;
 }
 
+#submit-button {
+    top: 350px;
+}
+
 button:hover, label:hover{
     background-color: rgba(0, 0, 0, 0.2);
     transition: 260ms;
+    cursor: pointer;
+}
+
+.tables {
+    position: relative;
+
+    display: flex;
+
+    top: 380px;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.figures {
+    position: relative;
+
+    display: flex;
+
+    width: fit-content;
+    height: fit-content;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.tables_content {
+    font-size: 11pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid silver;
+
+}
+
+.tables_content td, th {
+    padding: 5px;
+}
+
+.tables_content tr:nth-child(even) {
+    background: #E0E0E0;
+}
+
+.tables_content tr:hover {
+    background: silver;
     cursor: pointer;
 }

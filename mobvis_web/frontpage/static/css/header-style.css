@@ -1,13 +1,14 @@
 body {
-    width: 1860px;
-    height: 1840px;
+    width: 97.75%;
+    height: 258%;
 
-    padding-bottom: 420px;
+    padding-bottom: 60px;
 
-    position: relative;
+    position: absolute;
 
     background: #FFF;
 }
+
 
 .top-logo {
     position: relative;
@@ -123,12 +124,12 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: relative;
 
     border-top: 6px solid rgba(204, 209, 220, 0.5);
 
     left: -8px;
-    bottom: -172px;
+    bottom: -400px;
 
     width: 102.3%;
     height: 280px;
