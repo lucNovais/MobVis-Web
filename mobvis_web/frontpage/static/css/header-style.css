@@ -1,42 +1,37 @@
-body {
-    width: 97.75%;
-    height: 258%;
-
-    padding-bottom: 60px;
-
-    position: absolute;
-
-    background: #FFF;
-}
-
-
 .top-logo {
     position: relative;
 
-    width: 403.16px;
-    height: 80px;
+    /* width: 403.16px;
+    height: 80px; */
+    min-width: 200px;
+    width: 22%;
+    height: 22%;
 
-    left: 39.16%;
+    left: 39%;
     top: 32px;
 }
 
 .top-phrase {
     position: relative;
 
-    width: 480px;
-    height: 50px;
+    /* width: 480px;
+    height: 50px; */
+    min-width: 240px;
+    width: 36%;
+    height: 26%;
 
-    left: 38.35%;
-    top: 24px;
+    left: 32%;
+    top: 28px;
 
     font-family: 'Calibri';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 26px;
     line-height: 29px;
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
 
     color: #000;
 }
@@ -44,11 +39,12 @@ body {
 .top-bar {
     position: absolute;
 
-    top: -8px;
-    left: -8px;
+    top: 0;
+    left: 0;
 
-    width: 102.3%;
-    height: 180px;
+    width: 100%;
+    /* height: 180px; */
+    height: 8%;
 
     padding: 0;
     margin: 0;
@@ -61,9 +57,10 @@ body {
 .top-circles {
     position: absolute;
 
-    top: -65px;
+    top: -1%;
 
-    height: 300px;
+    min-height: 200px;
+    height: 14vw;
 
     background: #FFF;
 }
@@ -71,17 +68,19 @@ body {
 #circle1 {
     border-radius: 50%;
 
-    left: 670px;
+    left: 36%;
 
-    width: 300px;
+    min-width: 200px;
+    width: 14vw;
 }
 
 #circle2 {
     border-radius: 100% 0 0 100% / 50% 0 0 50%;
 
-    left: 1745px;
+    left: 93%;
 
-    width: 150px;
+    min-width: 100px;
+    width: 7vw;
 }
 
 .bottom-logo {
@@ -91,10 +90,13 @@ body {
 
     margin-top: 22px;
     /* margin-left: 20px; */
-    left: 44.5%;
+    left: 44%;
 
-    width: 240px;
-    height: 47.64px;
+    /* width: 240px;
+    height: 47.64px; */
+    min-width: 180px;
+    width: 14%;
+    height: 14%;
 }
 
 .github-logo {
@@ -108,19 +110,34 @@ body {
 }
 
 .thanks-phrase {
+    position: relative;
+
     font-family: 'Calibri';
     font-style: normal;
     font-weight: 200;
-    font-size: 20px;
-    line-height: 29px;
+    font-size: 22px;
+    line-height: 28px;
     display: flex;
     align-items: center;
     text-align: center;
 
-    padding-left: 760px;
-    padding-top: 120px;
+    left: 38.5%;
+    top: 120px;
+
+    min-width: 360px;
+    width: 50%;
+    height: 30px;
 
     color: #000;
+}
+
+.institutions {
+    position: relative;
+
+    display: inline-block;
+
+    top: 120px;
+    left: 2%;
 }
 
 footer {
@@ -128,10 +145,13 @@ footer {
 
     border-top: 6px solid rgba(204, 209, 220, 0.5);
 
-    left: -8px;
-    bottom: -400px;
+    margin-top: 150px;
 
-    width: 102.3%;
+    left: 0;
+    /* bottom: -400px; */
+    bottom: 0;
+
+    width: 100%;
     height: 280px;
 
     background-color: rgba(221, 226, 237, 0.5);
@@ -156,37 +176,33 @@ footer a {
 }
 
 #ufop {
-    width: 40px;
-    height: 92.65px;
-
-    padding-left: 80px;
+    width: 1.8%;
+    height: 26%;
 }
 
 #ufes {
-    width: 80px;
-    height: 43.76px;
-
-    top: 100px;
+    width: 4.5%;
+    height: 18%;
 }
 
 #fkie {
-    width: 120px;
-    height: 42.75px;
+    width: 7%;
+    height: 15%;
 }
 
 #fapemig {
-    width: 80px;
-    height: 67.04px;
+    width: 4%;
+    height: 20%;
 }
 
 .navbar-bar {
     position: absolute;
 
-    top: 172px;
-    left: -8px;
+    top: 154px;
+    left: 0;
 
-    width: 102.3%;
-    height: 50px;
+    width: 100%;
+    height: 2%;
 
     padding: 0;
     margin: 0;
@@ -197,15 +213,15 @@ footer a {
 }
 
 .navbar {
-    position: relative;
+    position: absolute;
 
     display: inline;
 
-    left: 37.5%;
-    top: 46px;
+    left: 0%;
+    top: 156px;
 
-    height: 38px;
-    width: 124px;
+    width: 100%;
+    height: 12%;
 
     font-family: 'Calibri';
     font-style: normal;

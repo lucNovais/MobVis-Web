@@ -1,19 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    position: absolute;
+
+    background: #FFF;
+}
+
 .std-box {
     position: relative;
 
-    width: 860px;
-    height: 280px;
+    top: 100px;
 
-    left: 532px;
+    min-width: 640px;
+    width: 52%;
+    height: 300px;
+
+    left: 26%;
+
+    margin-top: 20px;
 
     background: #F3F3F3;
     border-radius: 10px;
+
+    justify-content: center;
 }
 
 .std-box img {
     position: inherit;
 
-    width: 36px;
+    width: 5%;
     height: 36px;
 
     top: 16px;
@@ -25,10 +47,10 @@
 .std-box p {
     position: inherit;
 
-    top: -43px;
-    left: 60px;
+    top: -7%;
+    left: 8%;
 
-    width: 280px;
+    width: 40%;
     height: 26px;
 
     font-family: 'Calibri';
@@ -45,48 +67,49 @@
 .std-box ol {
     position: inherit;
 
-    width: 670px;
-    height: 196px;
+    width: 80%;
+    height: 80%;
 
-    left: 90px;
-    top: -62px;
+    left: 10%;
+    top: 0%;
 
     font-family: 'Calibri';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: calc(14px + 0.4vw);
+    line-height: 34px;
     display: inline-block;
     align-items: center;
 
     color: #000;
 }
 
-.std-box ul{
+.std-box ul {
     position: inherit;
 
     list-style-type: none;
 
+    width: 100%;
+
     font-family: 'Calibri';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: calc(14px + 0.4vw);
     display: inline-block;
-    align-items: center;
 
     color: #000;
 }
 
 .std-box #parameters {
-    top: -58px;
-    left: 180px;
+    top: 2%;
+    left: 27.4%;
 
     line-height: 22px;
 }
 
 .std-box #select-plots {
-    top: -60px;
-    left: 230px;
+    top: 0;
+    left: 36%;
 
     line-height: 52px;
 }
@@ -94,11 +117,11 @@
 .std-box label {
     position: inherit;
 
-    width: 200px;
+    width: 20%;
     height: 76px;
 
-    left: 128px;
-    top: 34px;
+    left: 20%;
+    top: 72px;
 
     background: #CCD1DC;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
@@ -216,13 +239,13 @@
 
     display: inline-block;
 
-    width: 195px;
-    height: 260px;
+    width: 22%;
+    height: 280px;
 
-    margin: 5px;
+    margin: 6px;
 
-    top: -40px;
-    left: 14px;
+    top: 0;
+    left: 3%;
 
     background-color: #FFF;
     border-radius: 10px;
@@ -241,20 +264,20 @@
 .metric {
     position: inherit;
 
-    font-size: 18px;
+    font-size: 20px;
 
     left: 20px;
 
     text-align: left;
 }
 
-#general-instructions {
+/* #general-instructions {
     top: 100px;
-}
+} */
 
-#upload-raw {
+/* #upload-raw {
     top: 146px;
-}
+} */
 
 #file-input {
     opacity: 0;
@@ -263,11 +286,11 @@
 #drag-drop {
     position: inherit;
 
-    width: 200px;
+    width: 20%;
     height: 84px;
 
-    left: 330px;
-    top: -45px;
+    left: 40%;
+    top: 0;
 
     font-family: 'Calibri';
     font-style: normal;
@@ -286,7 +309,7 @@
 
     height: 340px;
 
-    top: 195px;
+    /* top: 195px; */
 }
 
 #metrics {
@@ -294,22 +317,22 @@
 
     height: 380px;
 
-    top: 248px;
+    /* top: 248px; */
 }
 
 #plots {
     position: relative;
 
-    top: 300px;
+    /* top: 300px; */
 }
 
 button {
     position: relative;
 
-    width: 160px;
+    width: 10%;
     height: 56px;
 
-    left: 885px;
+    left: 45%;
     top: 180px;
 
     background: #CCD1DC;
@@ -330,7 +353,9 @@ button {
 }
 
 #submit-button {
-    top: 350px;
+    position: relative;
+
+    top: 120px;
 }
 
 button:hover, label:hover{

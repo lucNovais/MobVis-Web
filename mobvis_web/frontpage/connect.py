@@ -11,61 +11,94 @@ from mobvis.plots.spatial_plotter import *
 
 def mobvis_connection(trace, configurations, metrics, plots):
     context = {}
-
-    parsed_trace = par.parse(raw_trace=trace, raw_trace_cols=['timestamp', 'id', 'x', 'y'], is_ordered=True)
-
-    [trace_loc, loc_centers] = loc.find_locations(trace=parsed_trace, max_d=0.014, pause_threshold=10, dist_type="euclidean")
-    trace_homes = hloc.find_homes(trace_loc=trace_loc)
-    trace_contacts = cnt.detect_contacts(df=parsed_trace, radius=0.13, dist_type="euclidean")
-
-    trace_trvd = mb.build_metric('TRVD', trace_loc=trace_loc, dist_type="Euclidean").extract()
-    trace_radg = mb.build_metric('RADG', trace=parsed_trace, trace_loc=trace_loc, sl_centers=loc_centers, homes=trace_homes, dist_type="Euclidean").extract()
-    trace_viso = mb.build_metric('VISO', trace_loc=trace_loc).extract()
-    trace_vist = mb.build_metric('VIST', trace_loc=trace_loc).extract()
-    trace_trvt = mb.build_metric('TRVT', trace_loc=trace_loc).extract()
-    trace_inco = mb.build_metric('INCO', contacts_df=trace_contacts).extract()
-
     context['tables'] = []
-
-    context['tables'].append(trace_trvd.head(10).to_html(classes="tables_content", index=False))
-    context['tables'].append(trace_radg.head(10).to_html(classes="tables_content", index=False))
-    context['tables'].append(trace_viso.head(10).to_html(classes="tables_content", index=False))
-    context['tables'].append(trace_vist.head(10).to_html(classes="tables_content", index=False))
-    context['tables'].append(trace_trvt.head(10).to_html(classes="tables_content", index=False))
-    context['tables'].append(trace_inco.head(10).to_html(classes="tables_content", index=False))
-
-    fig1 = plot_trace(trace=trace, initial_id=1, number_of_nodes=5, show_y_label=False)
-    fig2 = plot_trace3d(trace=trace, initial_id=1, nodes_list=[4, 5, 6], show_y_label=False)
-    fig3 = plot_density(trace=trace, initial_id=1, number_of_nodes=50)
-    fig4 = plot_visit_order(trace_viso=trace_viso, initial_id=1, number_of_nodes=1)
-
-    fig5= plot_metric_histogram(
-        trace_trvd,
-        initial_id=1,
-        metric_type='TRVD',
-        differ_nodes=False,
-        show_title=False,
-        show_y_label=True,
-        max_users=100
-    )
-
-    fig6 = plot_metric_histogram(
-        trace_radg,
-        initial_id=1,
-        metric_type='RADG',
-        differ_nodes=False,
-        show_title=False,
-        show_y_label=True,
-        max_users=100
-    )
-
     context['figures'] = []
 
-    context['figures'].append(fig1.to_html())
-    context['figures'].append(fig2.to_html())
-    context['figures'].append(fig3.to_html())
-    context['figures'].append(fig4.to_html())
-    context['figures'].append(fig5.to_html())
-    context['figures'].append(fig6.to_html())
+    parsed_trace = par.parse(raw_trace=trace, is_ordered=True)
+
+    # TODO: Redo all of these procedures with more elegance
+
+    [trace_loc, loc_centers] = loc.find_locations(
+        trace=parsed_trace,
+        max_d=float(configurations[0]),
+        pause_threshold=float(configurations[1]),
+        dist_type=configurations[3]
+    )
+
+    trace_homes = hloc.find_homes(trace_loc=trace_loc)
+
+    for metric in metrics:
+        if metric == 'TRVD':
+            trvd = mb.build_metric('TRVD', trace_loc=trace_loc, dist_type=configurations[3]).extract()
+            context['tables'].append(trvd.head(10).to_html(classes='tables_content', index=False))
+
+            if 'statistical' in plots:
+                fig = plot_metric_histogram(
+                    trvd,
+                    metric_name=metric,
+                    differ_nodes=False,
+                    show_title=True,
+                    show_y_label=True,
+                    nbins=30
+                )
+                context['figures'].append(fig.to_html())
+
+        if metric == 'RADG':
+            radg = mb.build_metric('RADG', trace=parsed_trace, trace_loc=trace_loc, sl_centers=loc_centers, homes=trace_homes, dist_type=configurations[3]).extract()
+            context['tables'].append(radg.head(10).to_html(classes='tables_content', index=False))
+
+            if 'statistical' in plots:
+                fig = plot_metric_histogram(
+                    radg,
+                    metric_name=metric,
+                    differ_nodes=False,
+                    show_title=True,
+                    show_y_label=True,
+                    nbins=30
+                )
+                context['figures'].append(fig.to_html())
+
+        if metric == 'TRVT':
+            trvt = mb.build_metric('TRVT', trace_loc=trace_loc).extract()
+            context['tables'].append(trvt.head(10).to_html(classes='tables_content', index=False))
+
+            if 'statistical' in plots:
+                fig = plot_metric_histogram(
+                    trvt,
+                    metric_name=metric,
+                    differ_nodes=False,
+                    show_title=True,
+                    show_y_label=True,
+                    nbins=30
+                )
+                context['figures'].append(fig.to_html())
+
+        if metric == 'VIST':
+            vist = mb.build_metric('VIST', trace_loc=trace_loc).extract()
+            context['tables'].append(vist.head(10).to_html(classes='tables_content', index=False))
+
+            if 'statistical' in plots:
+                fig = plot_metric_histogram(
+                    vist,
+                    metric_name=metric,
+                    differ_nodes=False,
+                    show_title=True,
+                    show_y_label=True,
+                    nbins=30
+                )
+                context['figures'].append(fig.to_html())
+
+        if metric == 'VISO':
+            viso = mb.build_metric('VISO', trace_loc=trace_loc).extract()
+            context['tables'].append(viso.head(10).to_html(classes='tables_content', index=False))
+
+            fig = plot_visit_order(
+                trace_viso=viso,
+                specific_users=[2]
+            )
+            context['figures'].append(fig.to_html())
+
+        if metric == 'INCO':
+            pass
 
     return context
