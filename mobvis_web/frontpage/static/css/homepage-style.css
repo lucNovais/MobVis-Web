@@ -364,42 +364,44 @@ button:hover, label:hover{
     cursor: pointer;
 }
 
+.center-output {
+    display: block;
+
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .tables {
     position: relative;
 
-    display: flex;
+    top: 160px;
 
-    top: 380px;
+    left: 32%;
 
     width: fit-content;
     height: fit-content;
 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 
     background: #F3F3F3;
     border-radius: 10px;
-
-    align-items: center;
-    justify-content: center;
 }
 
 .figures {
     position: relative;
 
-    display: flex;
+    top: 120px;
+
+    left: 32%;
 
     width: fit-content;
     height: fit-content;
 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 
     background: #F3F3F3;
     border-radius: 10px;
-
-    align-items: center;
-    justify-content: center;
 }
 
 .tables_content {

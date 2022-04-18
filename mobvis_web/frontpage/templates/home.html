@@ -132,20 +132,22 @@
     <button type="submit" id="submit-button">SUBMIT</button>
 </form>
 
-{% if tables %}
-    {% for table in tables %}
-        <div class="tables">
-            {{ table|safe }}
-        </div>
-    {% endfor %}
-{% endif %}
+<div class="center-output">
+    {% if tables %}
+        {% for table in tables %}
+            <div class="tables">
+                {{ table|safe }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
-{% if figures %}
-    {% for figure in figures %}
-        <div class="figures">
-            {{ figure|safe }}
-        </div>
-    {% endfor %}
-{% endif %}
+    {% if figures %}
+        {% for figure in figures %}
+            <div class="figures">
+                {{ figure|safe }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
 
 {% endblock content %}
