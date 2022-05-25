@@ -1,6 +1,3 @@
-from distutils.command.config import config
-from django import views
-from django.db import connection
 from django.shortcuts import render
 
 import pandas as pd
