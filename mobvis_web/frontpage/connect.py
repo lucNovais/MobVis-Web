@@ -1,3 +1,4 @@
+from tkinter.tix import Tree
 from mobvis.preprocessing.parser import Parser as par
 
 from mobvis.metrics.utils.Locations import Locations as loc
@@ -44,14 +45,26 @@ def mobvis_connection(trace, configurations, metrics, plots):
 
     if plots:
         figures = {}
+
         if metrics and 'statistical' in plots:
             for metric, data in metrics_data.items():
-                figures[metric] = generate_statistical_plot(data, metric)
-                context['figures'].append(figures[metric][0].to_html())
-                context['figures'].append(figures[metric][1].to_html())
-                context['figures'].append(figures[metric][2].to_html())
+                if metric != 'VISO':
+                    figures[metric] = generate_statistical_plot(data, metric)
+                    for i in range(0, len(figures[metric])):
+                        context['figures'].append(figures[metric][i].to_html())
         else:
             print("ATTENTION: Can't generate statistical plots without any metric!")
+
+        if 'spatial' in plots:
+            figures = generate_spatial_plots(parsed_trace, 'trace')
+
+            for i in range(0, len(figures)):
+                context['figures'].append(figures[i].to_html())
+
+            if 'VISO' in metrics:
+                data = metrics_data['VISO']
+
+                context['figures'].append(generate_spatial_plots(data, 'visit_order').to_html())
 
     return context
 
@@ -98,34 +111,72 @@ def build_and_extract_metric(metric, req_dict):
 
 def generate_statistical_plot(data, metric, configs=None):
     if not configs:
-        configs = [
-            False,
-            len(data.id.unique()),
-            True
-        ]
+        configs = {
+            'differ_nodes': False,
+            'users_to_display': len(data.id.unique()),
+            'show_y_label': True
+        }
 
     hist = plot_metric_histogram(
         metric_df=data,
         metric_name=metric,
-        differ_nodes=configs[0],
-        users_to_display=configs[1],
-        show_y_label=configs[2]
+        **configs
     )
 
     box = boxplot_metric(
         metric_df=data,
         metric_name=metric,
-        differ_nodes=configs[0],
-        users_to_display=configs[1],
-        show_y_label=configs[2]
+        **configs
     )
 
     dist = plot_metric_dist(
         metric_df=data,
         metric_name=metric,
-        differ_nodes=configs[0],
-        users_to_display=configs[1],
-        show_y_label=configs[2]
+        **configs
     )
 
-    return [hist, box, dist]
+    if dist:
+        return [hist, box, dist]
+    return [hist, box]
+
+def generate_spatial_plots(data, name, configs=None):
+    if name == 'trace':
+        if not configs:
+            configs = {
+                'differ_nodes': True,
+                'users_to_display': 10,
+                'show_title': True,
+                'show_y_label': True
+            }
+        trace = plot_trace(
+            trace=data,
+            **configs
+        )
+
+        trace3d = plot_trace3d(
+            trace=data,
+            **configs
+        )
+
+        del configs['differ_nodes']
+        density = plot_density(
+            trace=data,
+            **configs
+        )
+
+        return [trace, trace3d, density]
+
+    if name == 'visit_order':
+        if not configs:
+            configs = {
+                'users_to_display': 1,
+                'show_title': True,
+                'show_y_label': True
+            }
+
+        plot = plot_visit_order(
+            trace_viso=data,
+            **configs
+        )
+
+        return plot
