@@ -23,7 +23,9 @@ def starting_page(request):
 
         plots = request.POST.getlist('plot')
 
-        context = mobvis_connection(trace, configurations, metrics, plots)
+        display_metrics = request.POST.getlist('display_metrics')
+
+        context = mobvis_connection(trace, configurations, metrics, plots, display_metrics)
 
     return render(request, 'home.html', context)
 

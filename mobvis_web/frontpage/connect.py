@@ -28,12 +28,18 @@ NEED_CONTACTS = [
     'CODU'
 ]
 
-def mobvis_connection(trace, configurations, metrics, plots):
+def mobvis_connection(trace, configurations, metrics, plots, display_metrics):
     context = {}
     context['tables'] = []
-    context['figures'] = []
+    context['figures_spatial'] = []
+    context['figures_statistical'] = []
 
     parsed_trace = par.parse(raw_trace=trace, is_ordered=True)
+
+    if display_metrics:
+        context['display_metrics'] = True
+    else:
+        context['display_metrics'] = False
 
     if metrics:
         requirements = get_metrics_prerequirements(parsed_trace, metrics, configurations)
@@ -51,7 +57,7 @@ def mobvis_connection(trace, configurations, metrics, plots):
                 if metric != 'VISO':
                     figures[metric] = generate_statistical_plot(data, metric)
                     for i in range(0, len(figures[metric])):
-                        context['figures'].append(figures[metric][i].to_html())
+                        context['figures_statistical'].append(figures[metric][i].to_html())
         else:
             print("ATTENTION: Can't generate statistical plots without any metric!")
 
@@ -59,12 +65,12 @@ def mobvis_connection(trace, configurations, metrics, plots):
             figures = generate_spatial_plots(parsed_trace, 'trace')
 
             for i in range(0, len(figures)):
-                context['figures'].append(figures[i].to_html())
+                context['figures_spatial'].append(figures[i].to_html())
 
             if 'VISO' in metrics:
                 data = metrics_data['VISO']
 
-                context['figures'].append(generate_spatial_plots(data, 'visit_order').to_html())
+                context['figures_spatial'].append(generate_spatial_plots(data, 'visit_order').to_html())
 
     return context
 
@@ -143,10 +149,12 @@ def generate_spatial_plots(data, name, configs=None):
     if name == 'trace':
         if not configs:
             configs = {
-                'differ_nodes': True,
-                'users_to_display': 10,
+                'differ_nodes': False,
+                'users_to_display': 1,
                 'show_title': True,
-                'show_y_label': True
+                'show_y_label': True,
+                'img_width': 620,
+                'img_height': 570
             }
         trace = plot_trace(
             trace=data,

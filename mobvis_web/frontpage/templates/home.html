@@ -77,7 +77,7 @@
     </div>
     
     <div class="std-box" id="metrics">
-        <img src="{% static 'imgs/icons/calc.png' %}" alt="Choose Metrics">
+        <img src="{% static 'imgs/icons/calc.png' %}" alt="Choose Metrics" />
         <p>Choose metrics: </p>
     
         <div class="metric-types">Spatial: 
@@ -96,6 +96,10 @@
         <div class="metric-types">Spatiotemporal: 
             <div class="metric"><input type="checkbox" name="metric" value="VISO" />Visit Order</div>
             <div class="metric"><input type="checkbox" name="metric" value="ASPD" />Average Speed</div>
+        </div>
+        <div class="show-metrics">
+            <input type="checkbox" checked name="display_metrics" value="display">
+            Display Tables
         </div>
     </div>
     
@@ -132,22 +136,40 @@
     <button type="submit" id="submit-button">SUBMIT</button>
 </form>
 
-<div class="center-output">
-    {% if tables %}
-        {% for table in tables %}
-            <div class="tables">
-                {{ table|safe }}
-            </div>
-        {% endfor %}
-    {% endif %}
+{% if tables and display_metrics %}
+<h2 class="media-division"><img src="{% static 'imgs/icons/table.svg' %}" alt="Tables Content" />Tables: Metrics Data</h2>
+    <div class="table-scroller">
+    {% for table in tables %}
+        <div class="table-element">
+            {{ table|safe }}
+            <button id="download-button">DOWNLOAD</button>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
 
-    {% if figures %}
-        {% for figure in figures %}
-            <div class="figures">
-                {{ figure|safe }}
-            </div>
-        {% endfor %}
-    {% endif %}
-</div>
+{% if figures_spatial %}
+<h2 class="media-division"><img src="{% static 'imgs/icons/gps.svg' %}" alt="Spatial Figures Content" />Figures: Spatial Plots</h2>
+    <div class="figure-scroller">
+    {% for figure in figures_spatial %}
+        <div class="figure-element">
+            {{ figure|safe }}
+            <button id="download-button">DOWNLOAD</button>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% if figures_statistical %}
+<h2 class="media-division"><img src="{% static 'imgs/icons/boxplot.svg' %}" alt="Spatial Figures Content" />Figures: Statistical Plots</h2>
+    <div class="figure-scroller">
+    {% for figure in figures_statistical %}
+        <div class="figure-element">
+            {{ figure|safe }}
+            <button id="download-button">DOWNLOAD</button>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
 
 {% endblock content %}

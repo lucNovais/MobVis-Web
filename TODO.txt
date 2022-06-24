@@ -1,6 +1,0 @@
-- > Finalizar a apresentação
-- > Organizar os plots e tabelas por categorias
-- > Adicionar opções de não exibir os samples das tabelas, fazer download
-- > Anexar uma VM com o MobVis funcionando (Docker)
-- > Adicionar em DEMO um notebook de exemplo
-- > Adicionar uma progress bar na versão web
