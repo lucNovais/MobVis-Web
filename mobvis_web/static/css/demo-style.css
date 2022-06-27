@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    position: absolute;
+
+    background: #FFF;
+}
+
+.work-image {
+    position: relative;
+
+    width: 12%;
+    min-width: 250px;
+
+    top: 130px;
+
+    left: 44%;
+}
+
+.dev-phrase {
+    position: relative;
+
+    width: 30%;
+    min-width: 500px;
+    height: 40px;
+
+    top: 150px;
+    left: 41%;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+
+    color: #000;
+}
+
+footer {
+    bottom: -90px;
+}

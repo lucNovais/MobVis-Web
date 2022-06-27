@@ -40,3 +40,6 @@ def check_configurations(configurations):
         configurations[3] = 'euclidean'
 
     return configurations
+
+def demo_page(request):
+    return render(request, 'demo.html', {})

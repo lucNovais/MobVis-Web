@@ -56,7 +56,7 @@
 .top-circles {
     position: absolute;
 
-    top: -1%;
+    top: -15px;
 
     min-height: 200px;
     height: 14vw;
@@ -76,7 +76,7 @@
 #circle2 {
     border-radius: 100% 0 0 100% / 50% 0 0 50%;
 
-    left: 93%;
+    left: 92.96%;
 
     min-width: 100px;
     width: 7vw;
@@ -124,7 +124,7 @@
     top: 120px;
 
     min-width: 360px;
-    width: 50%;
+    width: 25%;
     height: 30px;
 
     color: #000;

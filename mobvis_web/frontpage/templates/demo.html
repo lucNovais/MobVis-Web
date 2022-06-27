@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/demo-style.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+
+<img class="work-image" src="{% static 'imgs/icons/construction.svg' %}" alt="Work in progress" />
+
+<div class="dev-phrase">
+    Page under development!
+</div>
+
+{% endblock content %}

@@ -12,7 +12,7 @@
 
     <ol>
         <li>Upload the trace in CSV format via the "Upload" button;</li>
-        <li>Select metrics and configure parameters for processing (if not specified, parameters are set   to a default value);</li>
+        <li>Select the metrics and set the configuration parameters for processing (if not specified, the parameters will be set to a default value);</li>
         <li>Select the plots to be generated;</li>
         <li>Press the "Submit" button to start the procedures.</li>
     </ol>
@@ -25,6 +25,10 @@
         <div id="drag-drop">Drag and drop here or</div>
         <label for="file-input">Select from computer</label>
         <input type="file" id="file-input" name="trace"/>
+        <div class="middle-question" id="column-names">
+            <input type="checkbox" checked name="column_names" value="names">
+            Does the trace have column names?
+        </div>
     </div>
 
     <!-- <button type="submit">UPLOAD</button> -->
@@ -65,19 +69,19 @@
                 </span>
                 Distance formula: 
             </li><input type="text" placeholder="default = euclidean" name="configuration">
-            <li>
+            <!-- <li>
                 <span class="help">?
                     <span class="help-text">
                         This configuration parameter will still be added, leave empty.
                     </span>
                 </span>
                 To be added: 
-            </li><input type="text" placeholder="default = NaN">
+            </li><input type="text" placeholder="default = NaN"> -->
         </ul>
     </div>
     
     <div class="std-box" id="metrics">
-        <img src="{% static 'imgs/icons/calc.png' %}" alt="Choose Metrics" />
+        <img src="{% static 'imgs/icons/calculator.svg' %}" alt="Choose Metrics" />
         <p>Choose metrics: </p>
     
         <div class="metric-types">Spatial: 
@@ -97,14 +101,14 @@
             <div class="metric"><input type="checkbox" name="metric" value="VISO" />Visit Order</div>
             <div class="metric"><input type="checkbox" name="metric" value="ASPD" />Average Speed</div>
         </div>
-        <div class="show-metrics">
+        <div class="middle-question" id="display-metrics">
             <input type="checkbox" checked name="display_metrics" value="display">
             Display Tables
         </div>
     </div>
     
     <div class="std-box" id="plots">
-        <img src="{% static 'imgs/icons/chart.png' %}" alt="Select Plots" />
+        <img src="{% static 'imgs/icons/chart.svg' %}" alt="Select Plots" />
         <p>Select plots: </p>
         <ul id="select-plots">
             <li>
@@ -123,14 +127,14 @@
                 </span><input type="checkbox" checked name="plot" value="spatial">
                 Spatial plots (trace)
             </li>
-            <li>
+            <!-- <li>
                 <span class="help">?
                     <span class="help-text">
                         Select plots manually.
                     </span>
                 </span><input type="checkbox">
                 Specify plots
-            </li>
+            </li> -->
         </ul>
     </div>
     <button type="submit" id="submit-button">SUBMIT</button>
