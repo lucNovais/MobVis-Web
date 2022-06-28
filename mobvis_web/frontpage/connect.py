@@ -57,7 +57,10 @@ def mobvis_connection(trace, configurations, metrics, plots, display_metrics):
                 if metric != 'VISO':
                     figures[metric] = generate_statistical_plot(data, metric)
                     for i in range(0, len(figures[metric])):
-                        context['figures_statistical'].append(figures[metric][i].to_html())
+                        if figures[metric][i]:
+                            context['figures_statistical'].append(figures[metric][i].to_html())
+                        else:
+                            context['figures_statistical'].append("<p>No plot!</p>")
         else:
             print("ATTENTION: Can't generate statistical plots without any metric!")
 
