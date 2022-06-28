@@ -499,3 +499,84 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     top: 94px;
     left: 34%;
 }
+
+.columns {
+    background: #DDE2ED;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    position: relative;
+    left: -5%;
+    top: 110px;
+
+    min-width: 720px;
+    width: 110%;
+    height: 300px;
+
+    z-index: 3;
+}
+
+.columns p {
+    display: flexbox;
+    position: inherit;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(11px + 0.4vw);
+    line-height: 24px;
+
+    width: 90%;
+    height: 50px;
+
+    left: 5%;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    top: 25px;
+
+    color: #000;
+
+    /* margin-bottom: 60px; */
+    margin-bottom: 10px;
+}
+
+.columns select {
+    position: relative;
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+    text-align-last: center;
+
+    top: 50px;
+    left: 17.5%;
+
+    border-radius: 5px;
+    border: none;
+
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(12px + 0.4vw);
+
+    width: 15%;
+    margin-left: 1%;
+    height: 40px;
+}
+
+.columns button {
+    width: 12%;
+    min-width: 100px;
+
+    position: relative;
+    display: flex;
+
+    top: 65px;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}

@@ -26,8 +26,57 @@
         <label for="file-input">Select from computer</label>
         <input type="file" id="file-input" name="trace"/>
         <div class="middle-question" id="column-names">
-            <input type="checkbox" checked name="column_names" value="names">
+            <input type="checkbox" checked name="column_names" value="names" onclick="columnsController()">
             Does the trace have column names?
+        </div>
+        <div class="columns" style="display: none;" id="columns-div">
+            <p style="font-weight:600; font-size: 24px;">Select the corresponding names of the four key columns (ex.: timestamp, id, x, y) in the order that they are in the trace.</p>
+            <p>IMPORTANT: If the trace contains more than four columns, you can either name all of them before sending them to MobVis, or remove the non-key columns and enter the remaining columns names in order through this submenu.</p>
+            <select name="first-column" id="first-column">
+                <optgroup label="First Column">
+                    <option value="timestamp" selected>timestamp</option>
+                    <option value="datetime">datetime</option>
+                    <option value="id">id</option>
+                    <option value="x">x</option>
+                    <option value="y">y</option>
+                    <option value="lat">latitude</option>
+                    <option value="lng">longitude</option>
+                </optgroup>
+            </select>
+            <select name="second-column" id="second-column">
+                <optgroup label="Second Column">
+                    <option value="timestamp">timestamp</option>
+                    <option value="datetime">datetime</option>
+                    <option value="id" selected>id</option>
+                    <option value="x">x</option>
+                    <option value="y">y</option>
+                    <option value="lat">latitude</option>
+                    <option value="lng">longitude</option>
+                </optgroup>
+            </select>
+            <select name="third-column" id="third-column">
+                <optgroup label="Third Column">
+                    <option value="timestamp">timestamp</option>
+                    <option value="datetime">datetime</option>
+                    <option value="id">id</option>
+                    <option value="x" selected>x</option>
+                    <option value="y">y</option>
+                    <option value="lat">latitude</option>
+                    <option value="lng">longitude</option>
+                </optgroup>
+            </select>
+            <select name="fourth-column" id="fourth-column">
+                <optgroup label="Fourth Column">
+                    <option value="timestamp">timestamp</option>
+                    <option value="datetime">datetime</option>
+                    <option value="id">id</option>
+                    <option value="x">x</option>
+                    <option value="y" selected>y</option>
+                    <option value="lat">latitude</option>
+                    <option value="lng">longitude</option>
+                </optgroup>
+            </select>
+            <button type="button" onclick="columnsController()">HIDE</button>
         </div>
     </div>
 

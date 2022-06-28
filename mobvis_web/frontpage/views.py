@@ -8,7 +8,23 @@ def starting_page(request):
     context = {}
 
     if request.method == 'POST':
-        trace = pd.read_csv(request.FILES['trace'], sep=',')
+        trace = None
+        configurations = []
+        metrics = []
+        plots = []
+        display_metrics = []
+
+        if request.POST.getlist('column_names'):
+            trace = pd.read_csv(request.FILES['trace'], sep=',')
+        else:
+            names = [
+                request.POST.get('first-column'),
+                request.POST.get('second-column'),
+                request.POST.get('third-column'),
+                request.POST.get('fourth-column')
+            ]
+            
+            trace = pd.read_csv(request.FILES['trace'], sep=',', names=names)
         
         print('\nUploaded trace: \n')
         print(trace.head())
